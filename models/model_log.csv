@@ -1,0 +1,3 @@
+version,timestamp,auc,model_path,notes
+v1,2025-10-28,0.812,models/model.joblib,initial training baseline
+

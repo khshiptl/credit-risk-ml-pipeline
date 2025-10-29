@@ -22,3 +22,12 @@ def train_model(df: pd.DataFrame, target: str, model_dir: str):
     joblib.dump(pipe, model_path)
     return {"auc": auc, "model_path": str(model_path)}
 
+if __name__ == "__main__":
+    import pandas as pd
+    from src.etl import load_csv
+
+    df = load_csv("data/raw/credit_data.csv")
+    result = train_model(df, target="default", model_dir="models")
+    print(f"Model trained. AUC: {result['auc']:.3f}")
+    print(f"Saved model to: {result['model_path']}")
+
